@@ -1,1 +1,113 @@
-<!DOCTYPE html><html lang="zh-CN"><head><meta charset="utf-8"><meta content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover" name="viewport"><meta name="description" content="机器人控制技术"><meta name="hexo-theme-A4" content="v1.8.8"><link rel="alternate icon" type="image/webp" href="/img/favicon.webp"><title>ao</title><link rel="stylesheet" href="/css/highlight/style1.css"><link rel="stylesheet" href="/css/reset.css"><link rel="stylesheet" href="/css/markdown.css"><link rel="stylesheet" href="/css/fonts.css"><link rel="stylesheet" href="/css/ui.css"><link rel="stylesheet" href="/css/style.css"><link rel="stylesheet" href="/css/returnToTop.css"><link rel="stylesheet" href="/css/unicons.css"><link rel="stylesheet" href="/css/toc.css"><link rel="stylesheet" href="/css/returnToLastPage.css"><link rel="stylesheet" href="/css/lightgallery.min.css"><meta name="generator" content="Hexo 7.1.1"><style>mjx-container[jax=SVG]{direction:ltr}mjx-container[jax=SVG]>svg{overflow:visible}mjx-container[jax=SVG][display=true]{display:block;text-align:center;margin:1em 0}mjx-container[jax=SVG][justify=left]{text-align:left}mjx-container[jax=SVG][justify=right]{text-align:right}g[data-mml-node=merror]>g{fill:red;stroke:red}g[data-mml-node=merror]>rect[data-background]{fill:#ff0;stroke:none}g[data-mml-node=mtable]>line[data-line]{stroke-width:70px;fill:none}g[data-mml-node=mtable]>rect[data-frame]{stroke-width:70px;fill:none}g[data-mml-node=mtable]>.mjx-dashed{stroke-dasharray:140}g[data-mml-node=mtable]>.mjx-dotted{stroke-linecap:round;stroke-dasharray:0,140}g[data-mml-node=mtable]>svg{overflow:visible}[jax=SVG] mjx-tool{display:inline-block;position:relative;width:0;height:0}[jax=SVG] mjx-tool>mjx-tip{position:absolute;top:0;left:0}mjx-tool>mjx-tip{display:inline-block;padding:.2em;border:1px solid #888;font-size:70%;background-color:#f8f8f8;color:#000;box-shadow:2px 2px 5px #aaa}g[data-mml-node=maction][data-toggle]{cursor:pointer}mjx-status{display:block;position:fixed;left:1em;bottom:1em;min-width:25%;padding:.2em .4em;border:1px solid #888;font-size:90%;background-color:#f8f8f8;color:#000}foreignObject[data-mjx-xml]{font-family:initial;line-height:normal;overflow:visible}.MathJax path{stroke-width:3}mjx-container[display=true]{overflow:auto hidden}mjx-container[display=true]+br{display:none}</style></head><body><div class="left-toc-container"><nav id="toc" class="bs-docs-sidebar"></nav></div><div class="paper"><div class="shadow-drop-2-bottom paper-main"><div class="header"><div class="header-container"><img style="width:56px;height:auto" alt="^-^" cache-control="max-age=86400" class="header-img" src="/img/favicon.webp" width="10%"><div class="header-content"><a class="logo" href="/">ao</a> <span class="description"></span></div></div><ul class="nav"><li><a href="/">首页</a></li><li><a href="/list/">文章</a></li><li><a href="/categories/">分类</a></li></ul></div><div class="post-main"><div class="post-main-title">机器人控制技术</div><div class="post-md"><ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E6%8E%A7%E5%88%B6%E7%AE%80%E4%BB%8B"><span class="post-toc-text">控制简介</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E5%88%86%E7%B1%BB"><span class="post-toc-text">分类</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E6%9C%BA%E5%99%A8%E4%BA%BA%E6%8E%A7%E5%88%B6%E7%9A%84%E7%89%B9%E7%82%B9"><span class="post-toc-text">机器人控制的特点</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E5%8D%95%E5%85%B3%E8%8A%82%E5%B7%A5%E4%B8%9A%E6%9C%BA%E5%99%A8%E4%BA%BA%E6%A8%A1%E5%9E%8B"><span class="post-toc-text">单关节工业机器人模型</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E6%9C%BA%E5%99%A8%E4%BA%BA%E6%8E%A7%E5%88%B6%E6%96%B9%E5%BC%8F%E5%92%8C%E6%8E%A7%E5%88%B6%E6%96%B9%E6%B3%95"><span class="post-toc-text">机器人控制方式和控制方法</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E6%8E%A7%E5%88%B6%E6%96%B9%E5%BC%8F"><span class="post-toc-text">控制方式</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E6%8E%A7%E5%88%B6%E6%96%B9%E6%B3%95"><span class="post-toc-text">控制方法</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E6%9C%BA%E5%99%A8%E4%BA%BA%E6%8E%A7%E5%88%B6%E7%B3%BB%E7%BB%9F%E7%BB%93%E6%9E%84"><span class="post-toc-text">机器人控制系统结构</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E5%B7%A5%E4%BD%9C%E8%BF%87%E7%A8%8B"><span class="post-toc-text">工作过程</span></a></li></ol></li></ol><link rel="stylesheet" type="text/css" href="https://jsd.onmicrosoft.cn/npm/hexo-theme-a4@latest/source/css/lightgallery.min.css"><div class=".article-gallery"><span id="more"></span><h2 id="控制简介"><a href="#控制简介" class="headerlink" title="控制简介"></a>控制简介</h2><ul><li>开环控制<br>精确地<strong>知道被控对象的模型</strong>，并且这一模型在控制过程中保持不变<br>如果被控对象的模型能够精确知道，但模型是变化的；若模型的变化可以预测，使用开环预测控制；若模型的变化可以实时辩识，使用开环辨识控</li><li>闭环控制<br>被控对象的模型<strong>不能完全确定或完全不能确定</strong><h3 id="分类"><a href="#分类" class="headerlink" title="分类"></a>分类</h3></li><li>线性控制系统</li><li>非线性控制系统</li><li>恒值控制系统</li><li>随动系统</li><li>连续控制系统</li><li>离散控制系统<h3 id="机器人控制的特点"><a href="#机器人控制的特点" class="headerlink" title="机器人控制的特点"></a>机器人控制的特点</h3></li><li>非线性<br>引起机器人非线性的因数很多，机构构型、传动机构、驱动元件等都会引起系统的非线性</li><li>多变量<br>机器人系统是一个时变系统，动力学参数随着关节运动位置的变化而变化</li><li>强耦合<br>各关节具有耦合作用，表现为某一个关节的运动，会对其他关节产生动力效应，使得每个关节都要承受其他关节运动所产生的扰动</li></ul><p>总结:机器人是一个十分复杂的多输入多输出非线性系统，且在实际应用中一般很难得到精确的动力学方程</p><p>为解决以上问题，我们将复杂的整体控制问题简化为多个低阶子系统的控制问题；将控制分为单关节控制、多关节控制问题，这样前者需要考虑误差补偿问题，后者考虑耦合作用的补偿。由于工业机器人通常运动速度比较低，也要安装减速器，所以工业机器人系统就变成了一个由多关节(多轴)组成的各自独立的线性系统</p><h2 id="单关节工业机器人模型"><a href="#单关节工业机器人模型" class="headerlink" title="单关节工业机器人模型"></a>单关节工业机器人模型</h2><p><a href="/机器人运动学/6_1.png" class="gallery-item" style="box-shadow:none"><img src="/机器人运动学/6_1.png" alt=""></a><br><a href="/机器人运动学/6_2.png" class="gallery-item" style="box-shadow:none"><img src="/机器人运动学/6_2.png" alt=""></a><br><a href="/机器人运动学/6_3.png" class="gallery-item" style="box-shadow:none"><img src="/机器人运动学/6_3.png" alt=""></a><br><a href="/机器人运动学/6_6.png" class="gallery-item" style="box-shadow:none"><img src="/机器人运动学/6_6.png" alt=""></a></p><h2 id="机器人控制方式和控制方法"><a href="#机器人控制方式和控制方法" class="headerlink" title="机器人控制方式和控制方法"></a>机器人控制方式和控制方法</h2><h3 id="控制方式"><a href="#控制方式" class="headerlink" title="控制方式"></a>控制方式</h3><ul><li>位置控制、速度控制、加速度控制<ul><li>位置控制<br>适用于纯运动控制，即机器人与被控对象无接触，因此只需把持工具按照规定的轨迹运动<ul><li>点位控制:只管起点和终点位姿，怎么过去的不管</li><li>连续轨迹控制:不仅管起点和终点位姿，还管怎么过去的</li><li>直角坐标位置控制:是对机器人末端执行器坐标在参考坐标中的位置和姿态的控制</li><li>关节坐标位置控制:直接输入关节位移给定值，控制伺服机构</li></ul></li><li>速度控制:在轨迹控制的同时，还需要机器人按预定指令，控制运动部件的速度和加速度，以满足运动平稳、定位准确的要求</li></ul></li><li>力控制<br>利用机械手末端执行器与工作对象之间存在力的作用，通过力传感器提供的反馈信号，控制机器人运动<ul><li>以位移为基础的力控制:在位置闭环之外加上一个力的闭环，力传感器检测输出力，并与设定的力目标值进行比较，力值误差经过力/位移变化环节转换成目标位移，参与位移控制</li><li>以广义力为基础的力控制:在力闭环的基础上加上位置闭环，通过传感器检测手部的位移，经位移/力变换环节转换为输入力，与力的设定值合成之后作为力控制的给定量</li></ul></li><li>力/位混合控制<br>由两个独立的闭环来分别实施力和位置控制</li></ul><h3 id="控制方法"><a href="#控制方法" class="headerlink" title="控制方法"></a>控制方法</h3><p>滑模控制、模糊控制、人工神经网络控制、遗传算法、自适应控制、PID控制<br>常用的为PID控制，它的传递函数与流程图如下所示<br><a href="/机器人运动学/6_5.png" class="gallery-item" style="box-shadow:none"><img src="/机器人运动学/6_5.png" alt=""></a><br><a href="/机器人运动学/6_4.png" class="gallery-item" style="box-shadow:none"><img src="/机器人运动学/6_4.png" alt=""></a><br>注意单关节的开环传递函数，比前面的少分母少个s，所以要有积分环节</p><h2 id="机器人控制系统结构"><a href="#机器人控制系统结构" class="headerlink" title="机器人控制系统结构"></a>机器人控制系统结构</h2><p>分为上位机与下位机，上位机就是小电脑，负责系统的管理及坐标变换和插补运算；下位机就是单片机，且有多个，负责关节的控制；二者之间通过总线进行通信</p><h3 id="工作过程"><a href="#工作过程" class="headerlink" title="工作过程"></a>工作过程</h3><p>主控计算机接到工作人员输入的作业指令后，首先分析解释指令，确定手的运动参数，然后进行运动学、动力学和插补运算，最后得出机器人各个关节的协调运动参数。这些参数经过通信线路输出到伺服控制级作为各个关节伺服控制系统的给定信号。关节驱动器将此信号D/A转换后驱动各个关节产生协调运动，并通过传感器将各个关节的运动输出信号反馈回伺服控制级计算机形成局部闭环控制，从而精确控制机器人手部在空间的运动</p></div><script src="https://jsd.onmicrosoft.cn/npm/hexo-theme-a4@latest/source/js/lightgallery.min.js"></script><script>if("undefined"!=typeof lightGallery){var options={selector:".gallery-item"};lightGallery(document.getElementsByClassName(".article-gallery")[0],options)}</script></div><div class="post-meta"><i><span>2024-04-15</span> <span>该篇文章被 ao</span> <span>归为分类: <a href="/categories/%E6%9C%BA%E5%99%A8%E4%BA%BA%E8%BF%90%E5%8A%A8%E5%AD%A6/">机器人运动学</a></span></i></div><br></div><div class="footer"><span>© 1949-2024 China</span></div><div class="footer-last"><span>ao@aoaoaoao.cn</span> <span class="footer-last-span-right"><i>本站由<a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/index.html">Hexo</a>驱动｜使用<a target="_blank" rel="noopener" href="https://github.com/HiNinoJay/hexo-theme-A4">Hexo-theme-A4</a>主题</i></span></div><script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.7.2/jquery.min.js" type="text/javascript"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js" type="text/javascript"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.tocify/1.9.0/javascripts/jquery.tocify.min.js" type="text/javascript"></script><script src="/js/toc.js"></script><script src="/js/randomHeaderContent.js"></script><script src="/js/returnToTop.js"></script><script src="/js/returnToLastPage.js"></script><script src="/js/lightgallery.min.js"></script></div><div class="progress-wrap shadow-drop-2-bottom"><svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102"><path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98"/></svg></div><div class="return-to-last-progress-wrap shadow-drop-2-bottom"><svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102"><path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98"/></svg></div></div></body><script src="/js/darkmode-js.min.js"></script><script>function addDarkmodeWidget(){new Darkmode({bottom:"53px",right:"unset",left:"42px",time:"0.3s",mixColor:"#fff",backgroundColor:" #e4e4e4 ",buttonColorDark:"#100f2c",buttonColorLight:"#fff",saveInCookies:!0,label:"🌓",autoMatchOsTheme:!0}).showWidget()}window.addEventListener("load",addDarkmodeWidget)</script></html>
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="utf-8"><meta content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover" name="viewport"><meta name="description" content="机器人控制技术"><meta name="hexo-theme-A4" content="v1.8.8"><link rel="alternate icon" type="image/webp" href="/img/favicon.webp"><title>ao</title><link rel="stylesheet" href="/css/highlight/style1.css"><link rel="stylesheet" href="/css/reset.css"><link rel="stylesheet" href="/css/markdown.css"><link rel="stylesheet" href="/css/fonts.css"><link rel="stylesheet" href="/css/ui.css"><link rel="stylesheet" href="/css/style.css"><link rel="stylesheet" href="/css/returnToTop.css"><link rel="stylesheet" href="/css/unicons.css"><link rel="stylesheet" href="/css/toc.css"><link rel="stylesheet" href="/css/returnToLastPage.css"><link rel="stylesheet" href="/css/lightgallery.min.css"><meta name="generator" content="Hexo 7.1.1"><style>mjx-container[jax="SVG"] {
+  direction: ltr;
+}
+
+mjx-container[jax="SVG"] > svg {
+  overflow: visible;
+}
+
+mjx-container[jax="SVG"][display="true"] {
+  display: block;
+  text-align: center;
+  margin: 1em 0;
+}
+
+mjx-container[jax="SVG"][justify="left"] {
+  text-align: left;
+}
+
+mjx-container[jax="SVG"][justify="right"] {
+  text-align: right;
+}
+
+g[data-mml-node="merror"] > g {
+  fill: red;
+  stroke: red;
+}
+
+g[data-mml-node="merror"] > rect[data-background] {
+  fill: yellow;
+  stroke: none;
+}
+
+g[data-mml-node="mtable"] > line[data-line] {
+  stroke-width: 70px;
+  fill: none;
+}
+
+g[data-mml-node="mtable"] > rect[data-frame] {
+  stroke-width: 70px;
+  fill: none;
+}
+
+g[data-mml-node="mtable"] > .mjx-dashed {
+  stroke-dasharray: 140;
+}
+
+g[data-mml-node="mtable"] > .mjx-dotted {
+  stroke-linecap: round;
+  stroke-dasharray: 0,140;
+}
+
+g[data-mml-node="mtable"] > svg {
+  overflow: visible;
+}
+
+[jax="SVG"] mjx-tool {
+  display: inline-block;
+  position: relative;
+  width: 0;
+  height: 0;
+}
+
+[jax="SVG"] mjx-tool > mjx-tip {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+mjx-tool > mjx-tip {
+  display: inline-block;
+  padding: .2em;
+  border: 1px solid #888;
+  font-size: 70%;
+  background-color: #F8F8F8;
+  color: black;
+  box-shadow: 2px 2px 5px #AAAAAA;
+}
+
+g[data-mml-node="maction"][data-toggle] {
+  cursor: pointer;
+}
+
+mjx-status {
+  display: block;
+  position: fixed;
+  left: 1em;
+  bottom: 1em;
+  min-width: 25%;
+  padding: .2em .4em;
+  border: 1px solid #888;
+  font-size: 90%;
+  background-color: #F8F8F8;
+  color: black;
+}
+
+foreignObject[data-mjx-xml] {
+  font-family: initial;
+  line-height: normal;
+  overflow: visible;
+}
+
+.MathJax path {
+  stroke-width: 3;
+}
+
+mjx-container[display="true"] {
+  overflow: auto hidden;
+}
+
+mjx-container[display="true"] + br {
+  display: none;
+}
+</style></head><body><div class="left-toc-container"><nav id="toc" class="bs-docs-sidebar"></nav></div><div class="paper"><div class="shadow-drop-2-bottom paper-main"><div class="header"><div class="header-container"><img style="width:56px;height:auto" alt="^-^" cache-control="max-age=86400" class="header-img" src="/img/favicon.webp" width="10%"><div class="header-content"><a class="logo" href="/">ao</a> <span class="description"></span></div></div><ul class="nav"><li><a href="/">首页</a></li><li><a href="/list/">文章</a></li><li><a href="/categories/">分类</a></li></ul></div><div class="post-main"><div class="post-main-title">机器人控制技术</div><div class="post-md"><ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E6%8E%A7%E5%88%B6%E7%AE%80%E4%BB%8B"><span class="post-toc-text">控制简介</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E5%88%86%E7%B1%BB"><span class="post-toc-text">分类</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E6%9C%BA%E5%99%A8%E4%BA%BA%E6%8E%A7%E5%88%B6%E7%9A%84%E7%89%B9%E7%82%B9"><span class="post-toc-text">机器人控制的特点</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E5%8D%95%E5%85%B3%E8%8A%82%E5%B7%A5%E4%B8%9A%E6%9C%BA%E5%99%A8%E4%BA%BA%E6%A8%A1%E5%9E%8B"><span class="post-toc-text">单关节工业机器人模型</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E6%9C%BA%E5%99%A8%E4%BA%BA%E6%8E%A7%E5%88%B6%E6%96%B9%E5%BC%8F%E5%92%8C%E6%8E%A7%E5%88%B6%E6%96%B9%E6%B3%95"><span class="post-toc-text">机器人控制方式和控制方法</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E6%8E%A7%E5%88%B6%E6%96%B9%E5%BC%8F"><span class="post-toc-text">控制方式</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E6%8E%A7%E5%88%B6%E6%96%B9%E6%B3%95"><span class="post-toc-text">控制方法</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E6%9C%BA%E5%99%A8%E4%BA%BA%E6%8E%A7%E5%88%B6%E7%B3%BB%E7%BB%9F%E7%BB%93%E6%9E%84"><span class="post-toc-text">机器人控制系统结构</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E5%B7%A5%E4%BD%9C%E8%BF%87%E7%A8%8B"><span class="post-toc-text">工作过程</span></a></li></ol></li></ol><link rel="stylesheet" type="text/css" href="https://jsd.onmicrosoft.cn/npm/hexo-theme-a4@latest/source/css/lightgallery.min.css"><div class=".article-gallery"><span id="more"></span><h2 id="控制简介"><a href="#控制简介" class="headerlink" title="控制简介"></a>控制简介</h2><ul><li>开环控制<br>精确地<strong>知道被控对象的模型</strong>，并且这一模型在控制过程中保持不变<br>如果被控对象的模型能够精确知道，但模型是变化的；若模型的变化可以预测，使用开环预测控制；若模型的变化可以实时辩识，使用开环辨识控</li><li>闭环控制<br>被控对象的模型<strong>不能完全确定或完全不能确定</strong><h3 id="分类"><a href="#分类" class="headerlink" title="分类"></a>分类</h3></li><li>线性控制系统</li><li>非线性控制系统</li><li>恒值控制系统</li><li>随动系统</li><li>连续控制系统</li><li>离散控制系统<h3 id="机器人控制的特点"><a href="#机器人控制的特点" class="headerlink" title="机器人控制的特点"></a>机器人控制的特点</h3></li><li>非线性<br>引起机器人非线性的因数很多，机构构型、传动机构、驱动元件等都会引起系统的非线性</li><li>多变量<br>机器人系统是一个时变系统，动力学参数随着关节运动位置的变化而变化</li><li>强耦合<br>各关节具有耦合作用，表现为某一个关节的运动，会对其他关节产生动力效应，使得每个关节都要承受其他关节运动所产生的扰动</li></ul><p>总结:机器人是一个十分复杂的多输入多输出非线性系统，且在实际应用中一般很难得到精确的动力学方程</p><p>为解决以上问题，我们将复杂的整体控制问题简化为多个低阶子系统的控制问题；将控制分为单关节控制、多关节控制问题，这样前者需要考虑误差补偿问题，后者考虑耦合作用的补偿。由于工业机器人通常运动速度比较低，也要安装减速器，所以工业机器人系统就变成了一个由多关节(多轴)组成的各自独立的线性系统</p><h2 id="单关节工业机器人模型"><a href="#单关节工业机器人模型" class="headerlink" title="单关节工业机器人模型"></a>单关节工业机器人模型</h2><p><a href="/机器人运动学/6_1.png" class="gallery-item" style="box-shadow:none"><img src="/机器人运动学/6_1.png" alt=""></a><br><a href="/机器人运动学/6_2.png" class="gallery-item" style="box-shadow:none"><img src="/机器人运动学/6_2.png" alt=""></a><br><a href="/机器人运动学/6_3.png" class="gallery-item" style="box-shadow:none"><img src="/机器人运动学/6_3.png" alt=""></a><br><a href="/机器人运动学/6_6.png" class="gallery-item" style="box-shadow:none"><img src="/机器人运动学/6_6.png" alt=""></a></p><h2 id="机器人控制方式和控制方法"><a href="#机器人控制方式和控制方法" class="headerlink" title="机器人控制方式和控制方法"></a>机器人控制方式和控制方法</h2><h3 id="控制方式"><a href="#控制方式" class="headerlink" title="控制方式"></a>控制方式</h3><ul><li>位置控制、速度控制、加速度控制<ul><li>位置控制<br>适用于纯运动控制，即机器人与被控对象无接触，因此只需把持工具按照规定的轨迹运动<ul><li>点位控制:只管起点和终点位姿，怎么过去的不管</li><li>连续轨迹控制:不仅管起点和终点位姿，还管怎么过去的</li><li>直角坐标位置控制:是对机器人末端执行器坐标在参考坐标中的位置和姿态的控制</li><li>关节坐标位置控制:直接输入关节位移给定值，控制伺服机构</li></ul></li><li>速度控制:在轨迹控制的同时，还需要机器人按预定指令，控制运动部件的速度和加速度，以满足运动平稳、定位准确的要求</li></ul></li><li>力控制<br>利用机械手末端执行器与工作对象之间存在力的作用，通过力传感器提供的反馈信号，控制机器人运动<ul><li>以位移为基础的力控制:在位置闭环之外加上一个力的闭环，力传感器检测输出力，并与设定的力目标值进行比较，力值误差经过力/位移变化环节转换成目标位移，参与位移控制</li><li>以广义力为基础的力控制:在力闭环的基础上加上位置闭环，通过传感器检测手部的位移，经位移/力变换环节转换为输入力，与力的设定值合成之后作为力控制的给定量</li></ul></li><li>力/位混合控制<br>由两个独立的闭环来分别实施力和位置控制</li></ul><h3 id="控制方法"><a href="#控制方法" class="headerlink" title="控制方法"></a>控制方法</h3><p>滑模控制、模糊控制、人工神经网络控制、遗传算法、自适应控制、PID控制<br>常用的为PID控制，它的传递函数与流程图如下所示<br><a href="/机器人运动学/6_5.png" class="gallery-item" style="box-shadow:none"><img src="/机器人运动学/6_5.png" alt=""></a><br><a href="/机器人运动学/6_4.png" class="gallery-item" style="box-shadow:none"><img src="/机器人运动学/6_4.png" alt=""></a><br>注意单关节的开环传递函数，比前面的少分母少个s，所以要有积分环节</p><h2 id="机器人控制系统结构"><a href="#机器人控制系统结构" class="headerlink" title="机器人控制系统结构"></a>机器人控制系统结构</h2><p>分为上位机与下位机，上位机就是小电脑，负责系统的管理及坐标变换和插补运算；下位机就是单片机，且有多个，负责关节的控制；二者之间通过总线进行通信</p><h3 id="工作过程"><a href="#工作过程" class="headerlink" title="工作过程"></a>工作过程</h3><p>主控计算机接到工作人员输入的作业指令后，首先分析解释指令，确定手的运动参数，然后进行运动学、动力学和插补运算，最后得出机器人各个关节的协调运动参数。这些参数经过通信线路输出到伺服控制级作为各个关节伺服控制系统的给定信号。关节驱动器将此信号D/A转换后驱动各个关节产生协调运动，并通过传感器将各个关节的运动输出信号反馈回伺服控制级计算机形成局部闭环控制，从而精确控制机器人手部在空间的运动</p></div><script src="https://jsd.onmicrosoft.cn/npm/hexo-theme-a4@latest/source/js/lightgallery.min.js"></script><script>if("undefined"!=typeof lightGallery){var options={selector:".gallery-item"};lightGallery(document.getElementsByClassName(".article-gallery")[0],options)}</script></div><div class="post-meta"><i><span>2024-04-15</span> <span>该篇文章被 ao</span> <span>归为分类: <a href="/categories/%E6%9C%BA%E5%99%A8%E4%BA%BA%E8%BF%90%E5%8A%A8%E5%AD%A6/">机器人运动学</a></span></i></div><br></div><div class="footer"><span>© 1949-2024 China</span></div><div class="footer-last"><span>ao@aoaoaoao.online</span> <span class="footer-last-span-right"><i>本站由<a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/index.html">Hexo</a>驱动｜使用<a target="_blank" rel="noopener" href="https://github.com/HiNinoJay/hexo-theme-A4">Hexo-theme-A4</a>主题</i></span></div><script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.7.2/jquery.min.js" type="text/javascript"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js" type="text/javascript"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.tocify/1.9.0/javascripts/jquery.tocify.min.js" type="text/javascript"></script><script src="/js/toc.js"></script><script src="/js/randomHeaderContent.js"></script><script src="/js/returnToTop.js"></script><script src="/js/returnToLastPage.js"></script><script src="/js/lightgallery.min.js"></script></div><div class="progress-wrap shadow-drop-2-bottom"><svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102"><path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98"/></svg></div><div class="return-to-last-progress-wrap shadow-drop-2-bottom"><svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102"><path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98"/></svg></div></div></body><script src="/js/darkmode-js.min.js"></script><script>function addDarkmodeWidget(){new Darkmode({bottom:"53px",right:"unset",left:"42px",time:"0.3s",mixColor:"#fff",backgroundColor:" #e4e4e4 ",buttonColorDark:"#100f2c",buttonColorLight:"#fff",saveInCookies:!0,label:"🌓",autoMatchOsTheme:!0}).showWidget()}window.addEventListener("load",addDarkmodeWidget)</script></html>
